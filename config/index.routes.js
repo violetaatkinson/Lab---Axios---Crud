@@ -9,14 +9,17 @@ router.get("/", miscController.home);
 
 //CHARACTERS ROUTES
 
-// CREATE A NEW CHARACTER
-router.get("/createcharacter", characterController.create);
-router.post("/createcharacter", characterController.doCreate);
+// SHOW CHARACTER LIST
+router.get("/character/list", characterController.list);
 
 //GET CHARACTER DETAILS
 router.get("/character/:id",characterController.details);
 
-// DELETE CHARACTER
+// CREATE A NEW CHARACTER
+router.get("/character/create", characterController.create);
+router.post("/character/create", characterController.doCreate);
+
+// DELETE A CHARACTER
 router.delete("/character/:id" , characterController.delete);
 
 module.exports = router;
