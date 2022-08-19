@@ -8,7 +8,7 @@ module.exports.list = (req, res, next) => {
     apiService
       .getAllCharacters()
       .then((response) => {
-        res.render("character/list", { character: response.data });
+        res.render("character/list", { characters: response.data });
       })
       .catch(err => {
         console.error(err);
@@ -23,7 +23,7 @@ module.exports.list = (req, res, next) => {
     apiService
       .getOneCharacter(id)
       .then((response) => {
-        res.render("character/details", { character: response.data });
+        res.render("character/details", { characters: response.data });
       })
       .catch((err) => {
         console.error(err);
@@ -40,7 +40,7 @@ module.exports.doCreate = (req, res, next) => {
     apiService
       .createCharacter(req.body)
       .then((createdCharacter) => {
-            res.redirect("/list");
+            res.redirect("character/list");
           })
           .catch((err) => {
             console.error(err);
