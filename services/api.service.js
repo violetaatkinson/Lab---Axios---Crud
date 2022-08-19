@@ -19,9 +19,9 @@ class ApiService {
    return this.api.post(`/characters`, characterInfo);
   }
  
-  editCharacter = (characterId, characterInfo) => {
-    return this.api.put(`/characters/${characterId}`, characterInfo);
-  }
+ // editCharacter = (characterId, characterInfo) => {
+   // return this.api.put(`/characters/${characterId}`, characterInfo);
+ // }
  
  deleteCharacter = (characterId) => {
      return this.api.delete(`/characters/${characterId}`);
