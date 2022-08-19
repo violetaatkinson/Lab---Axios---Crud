@@ -8,7 +8,7 @@ module.exports.list = (req, res, next) => {
     apiService
       .getAllCharacters()
       .then((response) => {
-        res.render("character/list", { characters: response.data });
+        res.render("character/list", { character: response.data });
       })
       .catch(err => {
         console.error(err);
