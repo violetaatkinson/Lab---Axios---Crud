@@ -33,7 +33,7 @@ module.exports.list = (req, res, next) => {
 
 // CREATE A NEW CHARACTER
 module.exports.create = (req, res, next) => {
-    res.render("character/form");
+    res.render("form");
   }
 
 module.exports.doCreate = (req, res, next) => {
