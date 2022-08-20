@@ -3,7 +3,7 @@
   <div class="row">
     {{#if characters.length}}
       {{#each characters as |character|}}
-        <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex justify-content-center">
+        <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex justify-content-center product-card" data-id="{{character.id}}">
           <div class="card shadow bg-body rounded" style="width: 18rem;">
             <div class="card-body">
               <h5 class="card-title">Name: {{character.name}}</h5>
@@ -28,11 +28,10 @@
   for(let node of removeNodes) {
     node.addEventListener('click', () => {
       const nodeId = node.dataset.id;
-      document.querySelector(`.character[data-id="${nodeId}"]`).remove();
       axios.delete(`/character/${nodeId}`)
         .then(responseFromApi => {
           if(responseFromApi.status == 204) {
-            document.querySelector(`.character[data-id="${nodeId}"]`).remove();
+            document.querySelector(`.product-card[data-id="${nodeId}"]`).remove();
           }
         })
         .catch(error => console.log('Error!', error))

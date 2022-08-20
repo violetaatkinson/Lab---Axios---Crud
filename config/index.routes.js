@@ -12,12 +12,12 @@ router.get("/", miscController.home);
 // SHOW CHARACTER LIST
 router.get("/character/list", characterController.list);
 
-//GET CHARACTER DETAILS
-router.get("/character/:id",characterController.details);
-
 // CREATE A NEW CHARACTER
 router.get("/character/create", characterController.create);
 router.post("/character/create", characterController.doCreate);
+
+//GET CHARACTER DETAILS
+router.get("/character/:id",characterController.details);
 
 // DELETE A CHARACTER
 router.delete("/character/:id" , characterController.delete);
